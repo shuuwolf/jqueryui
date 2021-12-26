@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jqueryui</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<main class="master">
+    <div class="currency"> </div>
+    <div class="screen">
+        <div class="player">
+            <div id="player_hp_bar"><p id="player_hp_number">100/100</p></div>
+            <img id="player_img" src="/images/player_sword.png" height="150" alt="player">
+            <p id="showMonsterDamage"></p>
+        </div><!-- /player -->
+
+        <div class="attack_or_defense">
+            <img id="attack_or_defense" src="/images/sword.png" height="80" alt="attack_or_defense">
+        </div><!-- /attack_or_defense -->
+
+        <div class="monster">
+            <div id="monster_hp_bar"><p id="monster_hp_number">100/100</p></div>
+            <img id="monster_img" src="/images/horse_monster.png" height="150" alt="monster">
+            <p id="showPlayerDamage"></p>
+        </div><!-- /monster -->
+    </div><!-- /screen -->
+    <div class="menu_buttons">
+        <button onclick="playerDefense()">Defense</button>
+        <button id="attack" onclick="Attack()">Attack</button>
+        <button onclick="playerRun()">Run</button>
+    </div><!-- /menu_buttons -->
+</main><!-- /master-->
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
