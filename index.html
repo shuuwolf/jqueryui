@@ -13,30 +13,39 @@
 <body>
 
 <main class="master">
-    <div class="currency"> </div>
-    <div class="screen">
-        <div class="player">
-            <div id="player_hp_bar"><p id="player_hp_number">100/100</p></div>
-            <img id="player_img" src="/images/player_sword.png" height="150" alt="player">
-            <p id="showMonsterDamage"></p>
-        </div><!-- /player -->
+    <div class="container">
+        <div class="currency"><p id="gold_currency"></p></div>
+        <div class="screen">
+            <div class="player">
+                <div id="player_hp_bar"><p id="player_hp_number">100/100</p></div>
+                <img id="player_img" src="images/player_sword.png" height="150" alt="player">
+            </div><!-- /player -->
 
-        <div class="attack_or_defense">
-            <img id="attack_or_defense" src="/images/sword.png" height="80" alt="attack_or_defense">
-        </div><!-- /attack_or_defense -->
+            <div class="attack_or_defense">
+                <img id="attack_or_defense" src="images/sword.png" height="80" alt="attack_or_defense">
+            </div><!-- /attack_or_defense -->
 
-        <div class="monster">
-            <div id="monster_hp_bar"><p id="monster_hp_number">100/100</p></div>
-            <img id="monster_img" src="/images/horse_monster.png" height="150" alt="monster">
-            <p id="showPlayerDamage"></p>
-        </div><!-- /monster -->
-    </div><!-- /screen -->
-    <div class="menu_buttons">
-        <button onclick="playerDefense()">Defense</button>
-        <button id="attack" onclick="Attack()">Attack</button>
-        <button onclick="playerRun()">Run</button>
-    </div><!-- /menu_buttons -->
+            <div class="monster">
+                <div id="monster_hp_bar"><p id="monster_hp_number">100/100</p></div>
+                <img id="monster_img" src="images/horse_monster.png" height="150" alt="monster">
+            </div><!-- /monster -->
+        </div><!-- /screen -->
+        <div id="log_text_battle" class="log_battle">
+            <!-- Cria elementos dinamicamente com o JS! -->
+        </div><!-- log_battle -->
+        <div class="menu_buttons">
+            <button onclick="playerDefense()">Defense</button>
+            <button id="attack" onclick="Attack()">Attack</button>
+            <button onclick="playerRun()">Run</button>
+        </div><!-- /menu_buttons -->
+    </div><!-- /container -->
 </main><!-- /master-->
+
+<main class="jokenpo">
+    <div class="container">
+
+    </div><!-- /container -->
+</main><!-- /jokenpo -->
 
 
 

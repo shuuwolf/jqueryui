@@ -4,17 +4,17 @@ var playerHp = playerHpBase;
 var playerAttackBase = 1;
 var playerAttack = 1;
 var playerExp = 0;
-var exp = 0;
-var gold = 0;
 
-var monsterHpBase = Math.floor( (playerLevel * 10) + (playerHp / 3) );
+var monsterHpBase = Math.floor( (playerLevel * 100) + (playerHp / 3) );
 var monsterHp = monsterHpBase;
 var monsterAttackBase = 1;
 var monsterAttack = 1;
 var monsterLevel = 1;
 
-var player_damage = document.getElementById("showPlayerDamage");
-var monster_damage = document.getElementById("showMonsterDamage");
+var player_damage;
+var monster_damage;
+var exp = 5 * monsterLevel;
+var gold = 10 * monsterLevel;
 var player_hp = document.getElementById("player_hp_number");
 var monster_hp = document.getElementById("monster_hp_number");
 
@@ -29,6 +29,7 @@ function Attack(){
     monsterKilled();
     Monster_Attack();
     showPlayerDamage();
+    textLogOfBattlePlayer();
     //console.log(monsterHp);
     //console.log(playerAttack);
 
@@ -36,23 +37,6 @@ function Attack(){
     let buildimg = `/images/player_sword.png`;
     document.querySelector('#player_img').setAttribute('src', buildimg);
     $('#player_hp_bar').show();//voltar a mostrar o hp!
-
-    //imagem do escudo, trocar para imagem de atacar!
-    let buildimg2 = `/images/sword.png`;
-    document.querySelector('#attack_or_defense').setAttribute('src', buildimg2);
-}
-
-function monsterKilled(){
-    var exp = 5 * monsterLevel;
-    var gold = 10 * monsterLevel;
-    if(monsterHp <= 0){
-        let msg = 'Você matou o monstro! \r\n';
-        msg += 'Exp: ' + exp + "\r\n";
-        msg += 'Gold: ' + gold;
-        alert(msg);
-        monsterHp = monsterHpBase;
-        levelUP();
-    }
 }
 
 function levelUP(){
@@ -64,12 +48,10 @@ function levelUP(){
 
 function showPlayerDamage(){
     if(playerAttack >= 7){
-        player_damage.innerHTML = "CritDamage Dealt: " + playerAttack;
+        player_damage = "CritDamage Dealt: " + playerAttack;
     }else{
-        player_damage.innerHTML = "Damage Dealt: " + playerAttack;
+        player_damage = "Damage Dealt: " + playerAttack;
     }
-    //player_damage.insertAdjacentHTML('afterend', ' ');
-    //player_damage.insertAdjacentHTML('afterend', playerAttack);
 }
 
 function Monster_Attack(){
@@ -81,14 +63,47 @@ function Monster_Attack(){
     playerHp = playerHp - monsterAttack;
     player_hp.innerHTML = playerHp + '/' + playerHpBase;
     showMonsterDamage();
+    textLogOfBattleMonster();
     //console.log(monsterAttack);
 }
 
 function showMonsterDamage(){
     if(monsterAttack >= 7){
-        monster_damage.innerHTML = "CritDamage Dealt: " + monsterAttack;
+        monster_damage = "CritDamage Dealt: " + monsterAttack;
     }else{
-        monster_damage.innerHTML = "Damage Dealt: " + monsterAttack;
+        monster_damage = "Damage Dealt: " + monsterAttack;
+    }
+}
+
+function textLogOfBattlePlayer(){//Coloca um p dinamicamente no dom, com o valor do ataque do player.
+    var text_log = document.getElementById("log_text_battle");
+    text_log.insertAdjacentHTML("afterbegin", `<p class="text-log-player">` + `<span style="color:white;">Player: </span>` + player_damage + "</p>");
+    //removeTextBattle();
+}
+
+function textLogOfBattleMonster(){//Coloca um p dinamicamente no dom, com o valor do ataque do monstro.
+    var text_log_monster = document.getElementById("log_text_battle");
+    text_log_monster.insertAdjacentHTML("afterbegin", `<p class="text-log-monster">` + `<span style="color:white;">Monster: </span>` + monster_damage + "</p>");
+    //removeTextBattle();
+}
+
+function textLogOfBattleResources(){//Coloca um p dinamicamente no dom, com o valor do ataque do monstro.
+    var text_log_resource = document.getElementById("log_text_battle");
+    text_log_resource.insertAdjacentHTML("afterbegin", `<p class="text-log-resource">` + `<span style="color:white;">Resources: </span>` + 'Gold: ' + gold + ' Exp: ' + exp + "</p>");
+    //removeTextBattle();
+}
+
+function monsterKilled(){
+    if(monsterHp <= 0){
+        let msg = 'Você matou o monstro! \r\n';
+        var expResource = document.getElementById("gold_currency");
+        var goldResource = document.getElementById("gold_currency");
+        expResource.insertAdjacentHTML("afterbegin", "<span>Gold: " + gold + "</span>");
+        expResource.insertAdjacentHTML("afterbegin", "<span>Exp: " + exp + "</span>");
+        alert(msg);
+        monsterHp = monsterHpBase;
+        levelUP();
+        textLogOfBattleResources();
     }
 }
 
@@ -99,12 +114,27 @@ function playerRun(){
     $('#player_hp_bar').hide();
 }
 
-function playerDefense(){
-    let buildimg = `/images/defense.png`;
-    document.querySelector('#attack_or_defense').setAttribute('src', buildimg);
-    //monsterAttack = monsterAttack * 0.5;//diminui o ataque do monstro em 50%
-   
+/*
+function removeTextBattle(){
+    let textLogMonster = document.getElementsByClassName("text-log-monster");
+    let textLogPlayer = document.getElementsByClassName("text-log-player");
+    for(let i = 0; i < textLogMonster.length; i++){
+        if(textLogMonster.length <= 5){
+            return;
+        }else{
+            textLogMonster[5].remove();
+        } 
+    }
+
+    for(let i = 0; i < textLogPlayer.length; i++){
+        if(textLogPlayer.length <= 5){
+            return;
+        }else{
+            textLogPlayer[5].remove();
+        } 
+    }
 }
+*/
 
 
 //EFFECTS WITH JQUERY UI
