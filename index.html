@@ -5,16 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jqueryui</title>
+
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-rpg-game.css">
+    <link rel="stylesheet" href="css/jokenpo.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <main class="master">
-    <div class="container">
-        <div class="currency"><p id="gold_currency"></p></div>
+    <div class="container"> 
+        <h2>RPG GAME</h2>
         <div class="screen">
             <div class="player">
                 <div id="player_hp_bar"><p id="player_hp_number">100/100</p></div>
@@ -30,9 +34,18 @@
                 <img id="monster_img" src="images/horse_monster.png" height="150" alt="monster">
             </div><!-- /monster -->
         </div><!-- /screen -->
-        <div id="log_text_battle" class="log_battle">
-            <!-- Cria elementos dinamicamente com o JS! -->
-        </div><!-- log_battle -->
+
+        <div class="screen_currency">
+            <div class="currency">
+                <p id="xp_currency"></p>
+                <p id="gold_currency"></p>
+            </div><!-- /currency -->
+            <div id="log_text_battle" class="log_battle">
+                <!-- Cria elementos dinamicamente com o JS! -->
+            </div><!-- log_battle -->
+            <div class="clear"></div>
+        </div><!-- /screen_currency -->
+
         <div class="menu_buttons">
             <button onclick="playerDefense()">Defense</button>
             <button id="attack" onclick="Attack()">Attack</button>
@@ -43,7 +56,29 @@
 
 <main class="jokenpo">
     <div class="container">
-
+        <h2>JOKENPO</h2>
+        <div class="jokenpo_screen">
+            <div class="cards">
+                <button><img id="opt1" src="images/pedra.png" alt="pedra"></button>
+                <button><img id="opt2" src="images/papel.png" alt="papel"></button>
+                <button><img id="opt3" src="images/tesoura.png" alt="tesoura"></button>
+            </div><!-- /cards -->
+            <div class="result_screen">
+                <p id="my_points"></p>
+                <div class="img_choices">
+                    <img id="my_choice_img" src="" alt="Esperando...">
+                    <img width="100" height="100" src="images/versus.png" alt="CLIQUE EM ALGUMA FIGURA PARA COMEÇAR">
+                    <img id="enemy_choice_img" src="" alt="">
+                </div>
+                <p id="enemy_points"></p>
+            </div><!-- /result_screen -->
+            <p id="msg_result"></p>
+            <div class="cards player-cards">
+                <button onclick="jokenpo('rock');"><img id="opt4" src="images/pedra.png" alt="pedra"></button>
+                <button onclick="jokenpo('papel');"><img id="opt5" src="images/papel.png" alt="papel"></button>
+                <button onclick="jokenpo('tesoura');"><img id="opt6" src="images/tesoura.png" alt="tesoura"></button>
+            </div><!-- /cards -->
+        </div><!-- /jokenpo_screen -->
     </div><!-- /container -->
 </main><!-- /jokenpo -->
 
@@ -54,6 +89,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script src="js/jquery-ui.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app-rpg.js"></script>
+    <script src="js/jokenpo.js"></script>
 </body>
 </html>

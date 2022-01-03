@@ -5,7 +5,7 @@ var playerAttackBase = 1;
 var playerAttack = 1;
 var playerExp = 0;
 
-var monsterHpBase = Math.floor( (playerLevel * 100) + (playerHp / 3) );
+var monsterHpBase = Math.floor( (playerLevel * 10) + (playerHp / 3) );
 var monsterHp = monsterHpBase;
 var monsterAttackBase = 1;
 var monsterAttack = 1;
@@ -13,7 +13,8 @@ var monsterLevel = 1;
 
 var player_damage;
 var monster_damage;
-var exp = 5 * monsterLevel;
+var exp_required = 5 * monsterLevel * 2;
+var exp = 0;
 var gold = 10 * monsterLevel;
 var player_hp = document.getElementById("player_hp_number");
 var monster_hp = document.getElementById("monster_hp_number");
@@ -37,13 +38,6 @@ function Attack(){
     let buildimg = `/images/player_sword.png`;
     document.querySelector('#player_img').setAttribute('src', buildimg);
     $('#player_hp_bar').show();//voltar a mostrar o hp!
-}
-
-function levelUP(){
-    playerExp = playerExp + exp;
-    if(playerExp >= 50){
-        playerLevel++;
-    }
 }
 
 function showPlayerDamage(){
@@ -96,14 +90,22 @@ function textLogOfBattleResources(){//Coloca um p dinamicamente no dom, com o va
 function monsterKilled(){
     if(monsterHp <= 0){
         let msg = 'Você matou o monstro! \r\n';
-        var expResource = document.getElementById("gold_currency");
-        var goldResource = document.getElementById("gold_currency");
-        expResource.insertAdjacentHTML("afterbegin", "<span>Gold: " + gold + "</span>");
-        expResource.insertAdjacentHTML("afterbegin", "<span>Exp: " + exp + "</span>");
+        levelUP();
+        resource_update();
         alert(msg);
         monsterHp = monsterHpBase;
-        levelUP();
         textLogOfBattleResources();
+    }
+}
+
+function levelUP(){
+    if(playerExp >= exp_required){
+        playerLevel = playerLevel + 1;
+        playerExp = 0;
+        exp = 0;
+        monsterLevel = monsterLevel + 1;
+        let msg = "Você passou de level!!";
+        alert(msg);    
     }
 }
 
@@ -112,6 +114,16 @@ function playerRun(){
     document.querySelector('#player_img').setAttribute('src', buildimg);
     let msg = 'Você fugiu da batalha, Sem ganho de Exp e Gold!';
     $('#player_hp_bar').hide();
+}
+
+function resource_update(){
+    exp = 5 * monsterLevel;
+    var expResource = document.getElementById("xp_currency");
+    var goldResource = document.getElementById("gold_currency");
+    playerExp = exp + playerExp;
+    expResource.innerHTML = 'EXP: ' + playerExp + ' / ' + '<span id=\"exp_required\">' + exp_required + '</span>';
+    //expResource.insertAdjacentHTML("afterbegin", "<span>Gold: " + gold + "</span>");
+    //goldResource.insertAdjacentHTML("afterbegin", "<span>Exp: " + exp + "</span>");
 }
 
 /*

@@ -1,0 +1,164 @@
+main.master{
+    background:black;
+    width: 100%;
+    height: 100vh;
+}
+
+main.master h2{
+    text-align: center;
+    color: white;
+    font-size: 6rem;
+    letter-spacing: 10px;
+    text-shadow: 3px 3px black;
+}
+
+.screen{
+    width: 90%;
+    height: 50vh;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.screen_currency{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.screen_currency .currency{
+    width: 200px;
+    float: left;
+    border: 2px solid white;
+    margin-right: 5px;
+    padding: 4px;
+    
+}
+
+.screen_currency .currency p{
+    font-size: 1.3rem;
+    border-bottom: 2px solid grey;
+    line-height: 30px;
+}
+
+.log_battle{
+    width: 40%;
+    height: 30vh;
+    float: left;
+    border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 4px;
+}
+
+/*** SCROLL STYLE ***/
+
+.log_battle::-webkit-scrollbar{
+    width: 5px;
+    height: 8px;
+    background-color: #aaa;
+}
+
+.log_battle::-webkit-scrollbar-thumb{
+    background-color: blue;
+}
+
+.log_battle p{
+    color: white;
+    border-bottom: 1px solid white;
+    line-height: 25px;
+}
+
+/*Cor do texto do dano do player*/
+.log_battle p.text-log-player{
+    color: green;
+}
+
+/*Cor do texto do dano do monstro*/
+.log_battle p.text-log-monster{
+    color: red;
+}
+
+/*Cor do texto dos recursos*/
+.log_battle p.text-log-resource{
+    color: gold;
+}
+
+.screen img{
+    transform: rotateY(3.142rad);
+}
+
+.menu_buttons{
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu_buttons button{
+    height: 50px;
+    width: 200px;
+    font-size: 2rem;
+    margin-right: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.menu_buttons button:hover{
+    border: 2px solid green;
+}
+
+#monster_hp_bar{
+    background: red;
+    width: 100%;/*barra do hp*/
+    height: 15px;
+}
+
+#monster_hp_number{
+    color: white;
+    text-align: center;
+    line-height: 20px;
+}
+
+#player_hp_bar{
+    background: red;
+    width: 100%;/*barra do hp*/
+    height: 15px;
+}
+
+#player_hp_number{
+    color: white;
+    text-align: center;
+    line-height: 20px;
+}
+
+#showPlayerDamage{
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#showMonsterDamage{
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.currency{
+    display: flex;
+    flex-direction: column;
+}
+
+.currency #gold_currency{
+    color:goldenrod;
+}
+
+.currency #xp_currency{
+    color:rgb(21, 255, 0);
+}
+

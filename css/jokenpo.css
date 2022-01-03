@@ -1,0 +1,105 @@
+main.jokenpo{
+    padding: 10px;
+    width: 100%;
+    height: 90vh;
+    background: rgb(0, 195, 255);
+}
+
+main.jokenpo h2{
+    text-align: center;
+    color: white;
+    font-size: 6rem;
+    letter-spacing: 10px;
+    text-shadow: 3px 3px black;
+}
+
+.jokenpo_screen{
+    width: 70%;
+    height: 700px;
+    margin: 0 auto;
+    background: cyan;
+    border-radius: 10px;
+    border: 2px solid blue;
+}
+
+.result_screen{
+    margin-top: 5px;
+    height: 300px;
+    background-color: rgb(0, 17, 75);
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards button{
+    width: 200px;
+    height: 175px;
+    background: blue;
+    border: 0;
+    border-radius: 30%;
+    cursor: pointer;
+}
+
+.cards button img{
+    width: 200px;
+    height: 175px;
+    border-radius: 30%;
+    border: 3px solid black;
+}
+
+.img_choices{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.escolhido{
+    border: 5px solid red!important;
+}
+
+.escolhido-player{
+    border: 5px solid rgb(0, 47, 255)!important;
+}
+
+#enemy_choice_img,
+#my_choice_img{
+    width: 150px;
+    height: 150px;
+    border-radius: 40%;
+}
+
+#my_points{
+    color: green;
+    width: 300px;
+    height: 30px;
+    font-size: 17px;
+    margin: 10px 0 0 10px;
+    position: relative;
+}
+
+#enemy_points{
+    color: red;
+    width: 400px;
+    height: 30px;
+    font-size: 17px;
+    margin: 10px 10px 0 0;
+    position: relative;
+}
+
+#msg_result{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    position: relative;
+    top: -50px;
+}
+
+.player-cards{
+    margin-top: -10px;
+}
