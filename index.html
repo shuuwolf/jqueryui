@@ -7,7 +7,7 @@
     <title>Jqueryui</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style-rpg-game.css">
+    <link rel="stylesheet" href="css/digimon-rpg-game.css">
     <link rel="stylesheet" href="css/jokenpo.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,24 +59,24 @@
         <h2>JOKENPO</h2>
         <div class="jokenpo_screen">
             <div class="cards">
-                <button><img id="opt1" src="images/pedra.png" alt="pedra"></button>
-                <button><img id="opt2" src="images/papel.png" alt="papel"></button>
-                <button><img id="opt3" src="images/tesoura.png" alt="tesoura"></button>
+                <button><div><img id="opt1" src="images/pedra.png" alt="pedra"></div></button>
+                <button><div><img id="opt2" src="images/papel.png" alt="papel"></div></button>
+                <button><div><img id="opt3" src="images/tesoura.png" alt="tesoura"></div></button>
             </div><!-- /cards -->
             <div class="result_screen">
-                <p id="my_points"></p>
+                <p id="enemy_points"></p>
                 <div class="img_choices">
                     <img id="my_choice_img" src="" alt="Esperando...">
                     <img width="100" height="100" src="images/versus.png" alt="CLIQUE EM ALGUMA FIGURA PARA COMEÇAR">
                     <img id="enemy_choice_img" src="" alt="">
-                </div>
-                <p id="enemy_points"></p>
+                    <p id="msg_result"></p>
+                </div><!-- /img_choices -->
+                <p id="my_points"></p>
             </div><!-- /result_screen -->
-            <p id="msg_result"></p>
             <div class="cards player-cards">
-                <button onclick="jokenpo('rock');"><img id="opt4" src="images/pedra.png" alt="pedra"></button>
-                <button onclick="jokenpo('papel');"><img id="opt5" src="images/papel.png" alt="papel"></button>
-                <button onclick="jokenpo('tesoura');"><img id="opt6" src="images/tesoura.png" alt="tesoura"></button>
+                <button onclick="jokenpo('rock');"><div><img id="opt4" src="images/pedra.png" alt="pedra"></div></button>
+                <button onclick="jokenpo('papel');"><div><img id="opt5" src="images/papel.png" alt="papel"></div></button>
+                <button onclick="jokenpo('tesoura');"><div><img id="opt6" src="images/tesoura.png" alt="tesoura"></div></button>
             </div><!-- /cards -->
         </div><!-- /jokenpo_screen -->
     </div><!-- /container -->

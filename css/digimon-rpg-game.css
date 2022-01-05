@@ -14,7 +14,7 @@ main.master h2{
 
 .screen{
     width: 90%;
-    height: 50vh;
+    height: 100%;
     margin: 0 auto;
     border: 2px solid #ccc;
     display: flex;
