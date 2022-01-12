@@ -18,7 +18,7 @@ function jokenpo(str){
     let option6 = document.getElementById("opt6");//tesoura
 
     option4.onclick = function(){
-        my_choice_img.src = "images/pedra.png";
+        my_choice_img.src = "images/jokenpo/pedra.png";
         option4.setAttribute("class", "escolhido-player");
         option5.removeAttribute("class");
         option6.removeAttribute("class");
@@ -26,7 +26,7 @@ function jokenpo(str){
     }
 
     option5.onclick = function(){
-        my_choice_img.src = "images/papel.png";
+        my_choice_img.src = "images/jokenpo/papel.png";
         option5.setAttribute("class", "escolhido-player");
         option4.removeAttribute("class");
         option6.removeAttribute("class");
@@ -34,7 +34,7 @@ function jokenpo(str){
     }
 
     option6.onclick = function(){
-        my_choice_img.src = "images/tesoura.png";
+        my_choice_img.src = "images/jokenpo/tesoura.png";
         option6.setAttribute("class", "escolhido-player");
         option4.removeAttribute("class");
         option5.removeAttribute("class");
@@ -137,7 +137,7 @@ function enemy_rng(){
     switch (enemy_choice)
     {
         case 1:
-            enemy_choice_img.src = "images/pedra.png";
+            enemy_choice_img.src = "images/jokenpo/pedra.png";
             option1.setAttribute("class", "escolhido");
             option2.removeAttribute("class");
             option3.removeAttribute("class");
@@ -146,7 +146,7 @@ function enemy_rng(){
             break;
             
         case 2:
-            enemy_choice_img.src = "images/papel.png";
+            enemy_choice_img.src = "images/jokenpo/papel.png";
             option2.setAttribute("class", "escolhido");
             option1.removeAttribute("class");
             option3.removeAttribute("class");
@@ -155,7 +155,7 @@ function enemy_rng(){
             break;
     
         case 3:
-            enemy_choice_img.src = "images/tesoura.png";
+            enemy_choice_img.src = "images/jokenpo/tesoura.png";
             option3.setAttribute("class", "escolhido");
             option1.removeAttribute("class");
             option2.removeAttribute("class");

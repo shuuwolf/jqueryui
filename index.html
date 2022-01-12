@@ -16,80 +16,37 @@
 </head>
 <body>
 
-<main class="master">
-    <div class="container"> 
-        <h2>RPG GAME</h2>
-        <div class="screen">
-            <div class="player">
-                <div id="player_hp_bar"><p id="player_hp_number">100/100</p></div>
-                <img id="player_img" src="images/player_sword.png" height="150" alt="player">
-            </div><!-- /player -->
-
-            <div class="attack_or_defense">
-                <img id="attack_or_defense" src="images/sword.png" height="80" alt="attack_or_defense">
-            </div><!-- /attack_or_defense -->
-
-            <div class="monster">
-                <div id="monster_hp_bar"><p id="monster_hp_number">100/100</p></div>
-                <img id="monster_img" src="images/horse_monster.png" height="150" alt="monster">
-            </div><!-- /monster -->
-        </div><!-- /screen -->
-
-        <div class="screen_currency">
-            <div class="currency">
-                <p id="xp_currency"></p>
-                <p id="gold_currency"></p>
-            </div><!-- /currency -->
-            <div id="log_text_battle" class="log_battle">
-                <!-- Cria elementos dinamicamente com o JS! -->
-            </div><!-- log_battle -->
-            <div class="clear"></div>
-        </div><!-- /screen_currency -->
-
-        <div class="menu_buttons">
-            <button onclick="playerDefense()">Defense</button>
-            <button id="attack" onclick="Attack()">Attack</button>
-            <button onclick="playerRun()">Run</button>
-        </div><!-- /menu_buttons -->
-    </div><!-- /container -->
-</main><!-- /master-->
-
 <main class="jokenpo">
     <div class="container">
-        <h2>JOKENPO</h2>
+        <h1 class="title">JOKENPO Game</h1>
         <div class="jokenpo_screen">
             <div class="cards">
-                <button><div><img id="opt1" src="images/pedra.png" alt="pedra"></div></button>
-                <button><div><img id="opt2" src="images/papel.png" alt="papel"></div></button>
-                <button><div><img id="opt3" src="images/tesoura.png" alt="tesoura"></div></button>
+                <button><div><img id="opt1" src="images/jokenpo/pedra.png" alt="pedra"></div></button>
+                <button><div><img id="opt2" src="images/jokenpo/papel.png" alt="papel"></div></button>
+                <button><div><img id="opt3" src="images/jokenpo/tesoura.png" alt="tesoura"></div></button>
             </div><!-- /cards -->
             <div class="result_screen">
                 <p id="enemy_points"></p>
                 <div class="img_choices">
                     <img id="my_choice_img" src="" alt="Esperando...">
-                    <img width="100" height="100" src="images/versus.png" alt="CLIQUE EM ALGUMA FIGURA PARA COMEÇAR">
+                    <img width="100" height="100" src="images/jokenpo/versus.png" alt="CLIQUE EM ALGUMA FIGURA PARA COMEÇAR">
                     <img id="enemy_choice_img" src="" alt="">
                     <p id="msg_result"></p>
                 </div><!-- /img_choices -->
                 <p id="my_points"></p>
             </div><!-- /result_screen -->
             <div class="cards player-cards">
-                <button onclick="jokenpo('rock');"><div><img id="opt4" src="images/pedra.png" alt="pedra"></div></button>
-                <button onclick="jokenpo('papel');"><div><img id="opt5" src="images/papel.png" alt="papel"></div></button>
-                <button onclick="jokenpo('tesoura');"><div><img id="opt6" src="images/tesoura.png" alt="tesoura"></div></button>
+                <button onclick="jokenpo('rock');"><div><img id="opt4" src="images/jokenpo/pedra.png" alt="pedra"></div></button>
+                <button onclick="jokenpo('papel');"><div><img id="opt5" src="images/jokenpo/papel.png" alt="papel"></div></button>
+                <button onclick="jokenpo('tesoura');"><div><img id="opt6" src="images/jokenpo/tesoura.png" alt="tesoura"></div></button>
             </div><!-- /cards -->
         </div><!-- /jokenpo_screen -->
     </div><!-- /container -->
 </main><!-- /jokenpo -->
 
-
-
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script src="js/jquery-ui.js"></script>
-    <script src="js/app-rpg.js"></script>
+    <script src="js/digimon.js"></script>
     <script src="js/jokenpo.js"></script>
 </body>
 </html>
