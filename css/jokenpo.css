@@ -163,16 +163,26 @@ main.jokenpo .title{
         border-radius: 40%;
     }
 
+    main.jokenpo{
+        padding-bottom: 70px;
+    }
+
     .jokenpo_screen{
         width: 100%;
     }
 
-    main.jokenpo h2{
-        font-size: 50px;
+    main.jokenpo .title{
+        font-size: 3.8rem;
+        letter-spacing: 0px;
     }
 
     .result_screen{
+        margin-top: 5px;
+        height: 420px;
+        width: 100%;
+        background-color: rgb(1, 22, 90);
         display: block;
+        padding: 10px 0 0 0;
     }
 
     #my_points{
